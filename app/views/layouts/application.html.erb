@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tenant Management V2</title>
+  <meta name="viewpoint" content="width-device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %> 
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render "layouts/navbar" %>
+  <!-- main section -->
+  <div class="container">
+    <!-- for the flash message and enable the customer to close the box-->
+    <%= render 'shared/flash' %>
+
+    <div class="jumbotron">
+      <%= yield %>
+    </div>
+  </div>
+
+
+
+</body>
+</html>
