@@ -2,8 +2,14 @@ TenantManagementV2::Application.routes.draw do
   root to: 'pages#main'
   get "/about", to: "pages#about"
   
-  resources :tenants, except: [:destroy]
-  resources :posts, except: [:destory]
+  resources :users, except: [:destroy]
+
+  resources :posts, except: [:destroy] do
+    resources :comments, only: [:create] do
+    end
+  end
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

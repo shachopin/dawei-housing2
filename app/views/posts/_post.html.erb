@@ -1,4 +1,15 @@
-<div class="well">
-  <h3><%= post.title %> <br><small>by <%= post.tenant.name %></small></h3>
-  <p><%= post.content %> </p>
+<div class="row">
+  <div class='col-xs-8 well'>
+    <h4><%= link_to post.title, fix_url(post.url) %></h4>
+    <p><%= post.description %> </p>
+    <p>
+      <span class='quiet'>posted by</span> <%= link_to post.creator.username, user_path(post.creator) %>
+      <small>at <%= display_datetime(post.created_at) %></small>
+    </p>
+    <small>
+      <span>
+        <%= link_to("#{post.comments.size} comments", post_path(post)) %>
+      </span>
+    </small>
+  </div>
 </div>
