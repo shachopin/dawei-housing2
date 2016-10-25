@@ -1,25 +1,21 @@
-Let's create a new post here <%= link_to "go back", posts_path %>
-
-<%= render 'shared/errors', object: @post %>
+<%= render 'shared/errors', obj: @post %>
 
 <div class="row">
-  <div class="col-xs-12 well">  
+  <div class='col-xs-8 well'>
     <%= form_for @post do |f| %>
-      <div class="row">
-        <div class='col-xs-4 form-group'>
-          <%=f.label :title %>
-          <%=f.text_field :title, class: 'form-control' %>
-        </div>
+      <div class='control-group'>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
       </div>
-
-      <div class="row">
-        <div class='col-xs-4 form-group'>
-          <%=f.label :content %>
-          <%=f.text_area :content, class: 'form-control', rows: 5 %>
-        </div>
+      <div class='control-group'>
+        <%= f.label :url %>
+        <%= f.text_field :url %>
       </div>
-      
-      <%=f.submit 'Submit', class: 'btn btn-primary' %>
+      <div class='control-group'>
+        <%= f.label :description %>
+        <%= f.text_area :description, rows: 5 %>
+      </div>
+      <%= f.submit(@post.new_record? ? 'Create Post' : 'Update Post', class: 'btn btn-primary')%>
     <% end %>
   </div>
 </div>
