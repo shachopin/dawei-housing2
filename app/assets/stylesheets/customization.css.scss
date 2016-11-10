@@ -12,6 +12,13 @@ body{
   background-image: image-url("hardwood.jpg")
 }
 
+.label, .badge  {
+  a, a:hover, a:focus {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
 /*
 .container {
   margin-left: 135px
@@ -24,13 +31,6 @@ body{
 div.nav_item {
   margin-left: 25px;
   float: left;
-}
-
-.label, .badge  {
-  a, a:hover, a:focus {
-    color: #fff;
-    text-decoration: none;
-  }
 }
 
 div.comment_votes {
